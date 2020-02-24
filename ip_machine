@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+iso="snowcrash"
+echo $(VBoxManage guestproperty enumerate $(VBoxManage list runningvms | grep $1 | cut -d '"' -f 2) | grep IP | grep value | cut -d ' ' -f 4 | cut -d ',' -f 1)
+
